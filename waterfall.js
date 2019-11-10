@@ -6,7 +6,9 @@ var async = require('async');
 async.waterfall([
     function(done){
         fs.readFile(process.argv[2], function(err, data){
-            if (err) return done(err);
+            if (err)
+                return done(err);
+            
             done(null, data)
         });
     },
